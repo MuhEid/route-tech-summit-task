@@ -56,8 +56,8 @@ export const updateTask = async (req, res, next) => {
 
     if (taskType === "text" && textBody) {
         const newTask = await Task.findByIdAndUpdate(
-            categoryId,
-            { $set: updatedCategory },
+            taskId,
+            { $set: updatedTask },
             { new: true } // Return the updated document
         );
 
