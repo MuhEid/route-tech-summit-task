@@ -81,16 +81,12 @@ export const updateTask = async (req, res, next) => {
 export const getAllTasks = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const size = parseInt(req.query.size) || 10;
-    const isPrivate = req.query.isPrivate === "true";
     const categoryName = req.query.categoryName;
 
     const { limit, skip } = pagination({ page, size });
 
     try {
-        let filter = {};
-        if (isPrivate !== undefined) {
-            filter.isPrivate = isPrivate;
-        }
+        let filter = { isPrivate: false };
         if (categoryName) {
             const category = await Category.findOne({ categoryName: categoryName });
             if (category) {
@@ -104,6 +100,30 @@ export const getAllTasks = async (req, res) => {
         return res.json({ tasks });
     } catch (error) {
         return res.status(500).json({ message: "Error fetching tasks", error });
+    }
+};
+
+export const getPrivateTasks = async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const size = parseInt(req.query.size) || 10;
+    const userId = req.token.id;
+    const isPrivate = req.query.isPrivate;
+    console.log(isPrivate);
+
+    const { limit, skip } = pagination({ page, size });
+
+    try {
+        let filter = { userId };
+
+        if (isPrivate !== undefined) {
+            filter.isPrivate = isPrivate;
+        }
+        console.log(filter);
+        const privateTasks = await Task.find(filter).skip(skip).limit(limit).populate("categoryId");
+
+        return res.json({ privateTasks });
+    } catch (error) {
+        return res.status(500).json({ message: "Error fetching private tasks", error });
     }
 };
 
