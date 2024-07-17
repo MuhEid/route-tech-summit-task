@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "b4e1c4fb-7ab8-4608-83e8-7170f02f6487",
+		"name": "Route Tech Summit Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23437324"
+	},
+	"item": [
+		{
+			"name": "Add Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTNmZGUwY2RhM2M5NjUyZWJmY2ViZCIsImVtYWlsIjoicmFkd2FuQGdtYWlsLmNvbSIsIm5hbWUiOiJtdWhhbW1lZCIsImlhdCI6MTcyMDk3NjI0MSwiZXhwIjoxNzIwOTgzNDQxfQ.k9-TeOZniV0ITpfMvudnmpdHO8LA00x6QuJ8AK00sEQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"learning\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/category/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"radwan@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTNmZGUwY2RhM2M5NjUyZWJmY2ViZCIsImVtYWlsIjoicmFkd2FuQGdtYWlsLmNvbSIsIm5hbWUiOiJtdWhhbW1lZCIsImlhdCI6MTcyMDk3NjI0MSwiZXhwIjoxNzIwOTgzNDQxfQ.k9-TeOZniV0ITpfMvudnmpdHO8LA00x6QuJ8AK00sEQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"life\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/category/66940581376faa6d3df036ca",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"category",
+						"66940581376faa6d3df036ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTNmZGUwY2RhM2M5NjUyZWJmY2ViZCIsImVtYWlsIjoicmFkd2FuQGdtYWlsLmNvbSIsIm5hbWUiOiJtdWhhbW1lZCIsImlhdCI6MTcyMDk3NjI0MSwiZXhwIjoxNzIwOTgzNDQxfQ.k9-TeOZniV0ITpfMvudnmpdHO8LA00x6QuJ8AK00sEQ"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/category/66940581376faa6d3df036ca",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"category",
+						"66940581376faa6d3df036ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/category",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTNmZGUwY2RhM2M5NjUyZWJmY2ViZCIsImVtYWlsIjoicmFkd2FuQGdtYWlsLmNvbSIsIm5hbWUiOiJtdWhhbW1lZCIsImlhdCI6MTcyMTI0Nzg0OSwiZXhwIjoxNzIxMjU1MDQ5fQ.rR5sSxVkQAN4z_pnLwAq8oPX6LBZNfFSkBF1tYy72yQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\": \"work task 2\",\r\n    \"taskType\": \"list\",\r\n    \"listItems\":[\r\n    {\"text\": \"First item\"},\r\n    {\"text\": \"Second item\"}\r\n  ],\r\n    \"isPrivate\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/66940c8f539b6b2e3efd6158",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"66940c8f539b6b2e3efd6158"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTNmZGUwY2RhM2M5NjUyZWJmY2ViZCIsImVtYWlsIjoicmFkd2FuQGdtYWlsLmNvbSIsIm5hbWUiOiJtdWhhbW1lZCIsImlhdCI6MTcyMDk3OTY1NCwiZXhwIjoxNzIwOTg2ODU0fQ.YSveru0ifVFgG_5ySAEZjwO_OuWYZQSDLyh_-Ip183M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/task",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
