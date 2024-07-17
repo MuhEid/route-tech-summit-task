@@ -39,9 +39,15 @@ export const updateCategory = async (req, res, next) => {
 export const getAllCategories = async (req, res) => {
     const page = parseInt(req.query.page);
     const size = parseInt(req.query.size);
+    const categoryName = req.query.categoryName;
     const { limit, skip } = pagination({ page, size });
 
-    const categories = await Category.find()
+    let filter = {};
+    if (categoryName) {
+        filter.categoryName = categoryName;
+    }
+
+    const categories = await Category.find(filter)
         .skip(skip)
         .limit(limit)
         .populate([
