@@ -31,7 +31,7 @@ export const updateCategory = async (req, res, next) => {
     const newCategory = await Category.findByIdAndUpdate(
         categoryId,
         { $set: updatedCategory },
-        { new: true } // Return the updated document
+        { new: true }
     );
     return res.status(200).json({ message: "Category Updated", status: 200, newCategory });
 };

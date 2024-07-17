@@ -55,11 +55,7 @@ export const updateTask = async (req, res, next) => {
     };
 
     if (taskType === "text" && textBody) {
-        const newTask = await Task.findByIdAndUpdate(
-            taskId,
-            { $set: updatedTask },
-            { new: true } // Return the updated document
-        );
+        const newTask = await Task.findByIdAndUpdate(taskId, { $set: updatedTask }, { new: true });
 
         return res.status(200).json({ message: "Task updated", status: 200, newTask });
     } else if (
@@ -71,7 +67,7 @@ export const updateTask = async (req, res, next) => {
         const newTask = await Task.findByIdAndUpdate(
             categoryId,
             { $set: updatedTask },
-            { new: true } // Return the updated document
+            { new: true }
         );
 
         return res.status(200).json({ message: "Task Updated", status: 200, newTask });
